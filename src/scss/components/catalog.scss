@@ -1,0 +1,32 @@
+@use "../core/media";
+
+.catalog__wrapper {
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  grid-template-rows: min-content 1fr;
+  gap: 40px;
+}
+
+.catalog__filter {
+  grid-column: 1;
+  grid-row: 1/-1;
+}
+
+.catalog__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.catalog__title {
+  @include media.before-device(tablet) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+  }
+}
