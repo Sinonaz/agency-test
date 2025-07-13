@@ -1,0 +1,62 @@
+@use "../core/media";
+@use "../core/var";
+@use "../core/mixins";
+
+.thumb {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition;
+
+    @include mixins.hf() {
+      color: var.$c-primary;
+
+      & .thumb__box {
+        box-shadow: inset 0 0 0 1px var.$c-primary;
+      }
+
+      &:has(input:checked) {
+        & .thumb__box {
+          box-shadow: inset 0 0 0 1px var.$c-black;
+        }
+      }
+    }
+  }
+}
+
+.thumb__box {
+  position: relative;
+  flex-shrink: 0;
+  width: 36px;
+  height: 22px;
+  padding: 7px;
+  border-radius: 40px;
+  background: var.$c-gray;
+  transition: background var.$transition, box-shadow var.$transition;
+
+  &::before {
+    @include mixins.pseudo();
+
+    top: 50%;
+    left: 7px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: black;
+    transform: translateY(-50%);
+    transition: transform var.$transition, left var.$transition;
+  }
+
+  input:checked ~ & {
+    background: var.$c-primary;
+
+    &::before {
+      left: calc(100% - 14px);
+    }
+  }
+}

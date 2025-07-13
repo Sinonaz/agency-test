@@ -1,0 +1,23 @@
+@use "../core/media";
+@use "../core/var";
+@use "../core/extends";
+@use "../core/mixins";
+
+.filter__btn {
+  @extend %btn-reset;
+
+  font-weight: 500;
+  font-size: 1.2rem;
+  font-family: var.$main-font;
+  text-transform: uppercase;
+
+  @include media.before-device(tablet) {
+    display: none;
+  }
+}
+
+.filter__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
