@@ -1,0 +1,23 @@
+@use "../core/var";
+@use "../core/media";
+@use "../core/mixins";
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+}
+
+.nav__link {
+  font-family: inherit;
+  text-transform: uppercase;
+
+  @include media.before-device(tablet) {
+    transition: var.$transition;
+
+    @include mixins.hf() {
+      color: var.$c-primary;
+    }
+  }
+}

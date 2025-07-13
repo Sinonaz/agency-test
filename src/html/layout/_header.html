@@ -1,1 +1,54 @@
-<header class="content__header header"></header>
+<header class="content__header header">
+
+
+  <div class="header__wrapper container">
+    <button class="header__burger burger" type="button" aria-label="Открыть меню">
+      <svg width="24" height="14" viewBox="0 0 24 14">
+        <use xlink:href="/img/sprite.svg#burger"></use>
+      </svg>
+    </button>
+
+    <a href="/" class="header__logo">
+      <svg width="131" height="26" viewBox="0 0 131 26">
+        <use xlink:href="/img/sprite.svg#logo"></use>
+      </svg>
+    </a>
+
+    <nav class="header__nav nav">
+      <a href="#" class="nav__link">Продукты</a>
+      <a href="#" class="nav__link">Цвета</a>
+      <a href="#" class="nav__link">Вдохновение</a>
+      <a href="#" class="nav__link">Советы</a>
+      <a href="#" class="nav__link">Найти магазин</a>
+    </nav>
+
+    <div class="header__contacts">
+      <a href="tel:+74952217769" class="header__phone">+7 (495) 221-77-69</a>
+      <span class="header__label">Заказать звонок</span>
+    </div>
+
+    <div class="header__actions">
+      <button class="user-action" type="button" aria-label="Поиск по сайту">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <use xlink:href="/img/sprite.svg#lense"></use>
+        </svg>
+      </button>
+      <button class="user-action" type="button" aria-label="Профиль пользователя">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <use xlink:href="/img/sprite.svg#user"></use>
+        </svg>
+      </button>
+      <a href="#" class="user-action" aria-label="Перейти в список избранного">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <use xlink:href="/img/sprite.svg#heart"></use>
+        </svg>
+      </a>
+      <button class="user-action js-cart-count" type="button" data-count="0" aria-label="Корзина товаров">
+        <svg width="20" height="20" viewBox="0 0 20 20">
+          <use xlink:href="/img/sprite.svg#cart"></use>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+</header>

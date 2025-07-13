@@ -1,0 +1,14 @@
+@use "../core/extends";
+@use "../core/media";
+@use "../core/mixins";
+@use "../core/var";
+
+.burger {
+  @extend %btn-reset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 15px;
+}

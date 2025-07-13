@@ -1,0 +1,96 @@
+@use "../core/var";
+@use "../core/media";
+
+.header {
+  min-height: 104px;
+  padding: 36px 0;
+  background: var.$c-white;
+
+  @include media.device(tablet) {
+    min-height: 64px;
+    padding: 20px 0;
+  }
+}
+
+.header__wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  align-items: center;
+  gap: 0 100px;
+
+  @include media.device(laptop) {
+    gap: 0 40px;
+  }
+
+  @include media.device(tablet) {
+    grid-template-columns: 35px 1fr 35px;
+    gap: 10px;
+  }
+}
+
+.header__nav {
+  margin: 0 70px;
+
+  @include media.device(laptop) {
+    margin: 0;
+  }
+
+  @include media.device(tablet) {
+    display: none;
+  }
+}
+
+.header__logo {
+  & svg {
+    width: 131px;
+    height: 26px;
+  }
+
+  @include media.device(tablet) {
+    justify-self: center;
+
+    & svg {
+      width: 100px;
+      height: 21px;
+    }
+  }
+}
+
+.header__contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+
+  @include media.device(tablet) {
+    display: none;
+  }
+}
+
+.header__phone {
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 1.6rem;
+}
+
+.header__label {
+  color: rgba(var.$c-default-text, .3);
+}
+
+.header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+
+  @include media.device(tablet) {
+    & > *:not([data-count]) {
+      display: none;
+    }
+  }
+}
+
+.header__burger {
+  @include media.before-device(tablet) {
+    display: none;
+  }
+}

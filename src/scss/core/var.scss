@@ -1,4 +1,4 @@
-$laptop-max-width: 1920px;
+$laptop-max-width: 1500px;
 $laptop-mid-width: 1280px;
 $laptop-min-width: 1200px;
 
@@ -9,10 +9,10 @@ $tab-min-width: 768px;
 $mobile-max-width: 767px;
 $mobile-mid-width: 415px;
 
-$container-desktop-padding: 40px;
-$container-laptop-padding: 40px;
-$container-tab-padding: 40px;
-$container-mobile-padding: 12px;
+$container-desktop-padding: 60px;
+$container-laptop-padding: 60px;
+$container-tab-padding: 24px;
+$container-mobile-padding: 24px;
 
 $main-font: "Inter", arial, helvetica, sans-serif;
 $transition: 0.17s ease-in-out;
