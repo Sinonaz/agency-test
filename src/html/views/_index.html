@@ -1,5 +1,5 @@
 <main class="content__main main">
-  <h1 class="visually-hidden">Каталог товаров</h1>
+  <h1 class="visually-hidden">Премиум краски COLORS</h1>
 
   <ul class="main__breadcrumbs breadcrumbs container">
     <li class="breadcrumbs__item">
@@ -104,6 +104,85 @@
       </button>
 
       <div class="slide__pagination pagination"></div>
+    </div>
+  </section>
+
+  <section class="main__catalog catalog">
+
+    <div class="catalog__wrapper container">
+      <h2 class="catalog__title">Краски</h2>
+      <div class="catalog__head">
+        <p class="catalog__total js-total">412 товаров</p>
+
+        <form class="catalog__sort sort">
+          <button class="sort__btn" type="button">Сначала новые</button>
+
+          <fieldset class="sort__list">
+            <label class="sort__item">
+              <input type="radio" class="visually-hidden" name="sort" value="expensive">
+              <span class="sort__label">Сначала дорогие</span>
+            </label>
+            <label class="sort__item">
+              <input type="radio" class="visually-hidden" name="sort" value="cheap">
+              <span class="sort__label">Сначала недорогие</span>
+            </label>
+            <label class="sort__item">
+              <input type="radio" class="visually-hidden" name="sort" value="popular">
+              <span class="sort__label">Сначала популярные</span>
+            </label>
+            <label class="sort__item">
+              <input type="radio" class="visually-hidden" name="sort" value="new">
+              <span class="sort__label">Сначала новые</span>
+            </label>
+          </fieldset>
+        </form>
+      </div>
+
+      <form class="filter">
+
+        <button class="filter__btn" type="button">Фильтры</button>
+
+        <fieldset class="filter__list">
+          <label class="thumb">
+            <input type="checkbox" name="filter" value="new" checked class="visually-hidden">
+            <span class="thumb__label">Новинки</span>
+          </label>
+          <label class="thumb">
+            <input type="checkbox" name="filter" value="available" checked class="visually-hidden">
+            <span class="thumb__label">Есть в наличии</span>
+          </label>
+          <label class="thumb">
+            <input type="checkbox" name="filter" value="contract" checked class="visually-hidden">
+            <span class="thumb__label">Контрактные</span>
+          </label>
+          <label class="thumb">
+            <input type="checkbox" name="filter" value="exclusive" checked class="visually-hidden">
+            <span class="thumb__label">Эксклюзивные</span>
+          </label>
+          <label class="thumb">
+            <input type="checkbox" name="filter" value="sale" checked class="visually-hidden">
+            <span class="thumb__label">Распродажа</span>
+          </label>
+        </fieldset>
+      </form>
+
+      <div class="catalog__products">
+        <article class="product">
+          <picture class="product__picture">
+            <img src="" width="279" height="279" alt="" class="product__img">
+          </picture>
+
+          <div class="product__content">
+            <a href="#" class="product__name">Краска Wallquest, Brownsone MS90102</a>
+            <p class="product__price">6000 ₽</p>
+            <button class="product__btn" type="button" aria-label="Добавить в корзину">
+              <svg width="20" height="20" viewBox="0 0 20 20">
+                <use xlink:href="/img/sprite.svg#plus"></use>
+              </svg>
+            </button>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 </main>
