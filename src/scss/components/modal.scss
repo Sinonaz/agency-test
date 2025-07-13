@@ -1,0 +1,56 @@
+@use "../core/var";
+@use "../core/media";
+@use "../core/mixins";
+@use "../core/extends";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 100px;
+  background-color: rgba(0, 0, 0, 0.7);
+
+  @include media.device(mobile) {
+    padding: 12px;
+  }
+}
+
+.modal__content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var.$c-white;
+}
+
+.modal__close {
+  @extend %btn-reset;
+
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  color: var.$c-black;
+
+  @include media.before-device(tablet) {
+    @include mixins.hf() {
+      opacity: 0.5;
+    }
+  }
+
+  @include media.device(mobile) {
+    &--outer {
+      top: unset;
+      right: -3px;
+      bottom: calc(100% + 5px);
+      left: unset;
+    }
+  }
+}

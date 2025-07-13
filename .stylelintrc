@@ -1,0 +1,9 @@
+{
+  "plugins": [
+    "stylelint-order"
+  ],
+  "rules": {
+    "length-zero-no-unit": true,
+    "no-empty-source": null
+  }
+}

@@ -1,0 +1,36 @@
+@use "../core/media";
+@use "../core/var";
+
+// класс для обозначения контейнера для секций
+.container {
+  width: 100%;
+  max-width: 1360px + var.$container-desktop-padding * 2;
+  margin: 0 auto;
+  padding-right: var.$container-desktop-padding;
+  padding-left: var.$container-desktop-padding;
+
+  &--short {
+    max-width: 800px + var.$container-desktop-padding * 2;
+  }
+
+  @include media.device(laptop) {
+    padding-right: var.$container-laptop-padding;
+    padding-left: var.$container-laptop-padding;
+
+    &--short {
+      max-width: 800px + var.$container-laptop-padding * 2;
+    }
+  }
+
+  @include media.device(tablet) {
+    padding-right: var.$container-tab-padding;
+    padding-left: var.$container-tab-padding;
+  }
+
+  @include media.device(mobile) {
+    min-width: 320px;
+    max-width: 100%;
+    padding-right: var.$container-mobile-padding;
+    padding-left: var.$container-mobile-padding;
+  }
+}
