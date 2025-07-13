@@ -52,6 +52,7 @@ class Modals {
     this.#modalElement.dataset.isModalOpen = 'false'
 
     this.#body.style.overflow = ''
+    this.#body.removeAttribute('data-overlay')
 
     this.#returnFocusOnButtonElement()
     this.#focusedElement = null
@@ -67,6 +68,7 @@ class Modals {
     this.#modalElement.dataset.isModalOpen = 'true'
 
     this.#body.style.overflow = 'hidden'
+    this.#body.setAttribute('data-overlay', '')
 
     this.#setModalTabIndex()
     this.#focusMenuElement()
@@ -102,7 +104,7 @@ class Modals {
 
   onDocumentClick = ({ target }) => {
     switch (true) {
-      case Boolean(target.dataset.isModalOpen):
+      case Boolean(target.dataset.isModalOpen || target === this.#body):
         this.#hideModal()
         break
       case Boolean(target.closest('[data-open-target]')):

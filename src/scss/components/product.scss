@@ -1,0 +1,102 @@
+@use "../core/media";
+@use "../core/mixins";
+@use "../core/var";
+@use "../core/extends";
+
+.product {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(black, .1);
+
+  @include media.before-device(tablet) {
+    transition: border-bottom var.$transition;
+
+    @include mixins.hf() {
+      border-color: var.$c-primary;
+    }
+  }
+}
+
+.product__content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 16px;
+}
+
+.product__name {
+  grid-column: 1/-1;
+  margin: 0;
+  font-weight: 300;
+  font-size: 1.6rem;
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition;
+
+    @include mixins.hf() {
+      color: var.$c-primary;
+    }
+  }
+}
+
+.product__price {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.6rem;
+}
+
+.product__btn {
+  @extend %btn-reset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
+  min-height: 32px;
+  min-width: 80px;
+  border-radius: 8px;
+  background: var.$c-primary;
+  transition: opacity var.$transition, transform var.$transition;
+
+  &:active {
+    transform: scale(0.8);
+  }
+
+  @include media.before-device(tablet) {
+    opacity: 0;
+
+    .product:is(:hover, :focus-within, :focus-visible) & {
+      opacity: 1;
+    }
+  }
+
+  @include media.device(tablet-mid) {
+    min-height: 24px;
+    min-width: 40px;
+    padding: 4px;
+    border-radius: 6px;
+    background: var.$c-gray;
+  }
+}
+
+.product__picture {
+  overflow: hidden;
+}
+
+.product__img {
+  width: 100%;
+  max-height: 278px;
+
+  @include media.before-device(tablet) {
+    transition: transform var.$transition;
+
+    .product:is(:hover, :focus-within, :focus-visible) & {
+      transform: scale(1.2);
+    }
+  }
+
+  @include media.device(tablet-mid) {
+    max-height: 156px;
+  }
+}

@@ -115,22 +115,22 @@
         <p class="catalog__total js-total">412 товаров</p>
 
         <form class="catalog__sort sort">
-          <button class="sort__btn" type="button">Сначала новые</button>
+          <button class="sort__btn" type="button" data-open-target="js-sort-modal">Сначала новые</button>
 
-          <fieldset class="sort__list">
-            <label class="sort__item">
+          <fieldset class="sort__list js-sort-modal">
+            <label class="sort__item" data-close-target="js-sort-modal">
               <input type="radio" class="visually-hidden" name="sort" value="expensive">
               <span class="sort__label">Сначала дорогие</span>
             </label>
-            <label class="sort__item">
+            <label class="sort__item" data-close-target="js-sort-modal">
               <input type="radio" class="visually-hidden" name="sort" value="cheap">
               <span class="sort__label">Сначала недорогие</span>
             </label>
-            <label class="sort__item">
+            <label class="sort__item" data-close-target="js-sort-modal">
               <input type="radio" class="visually-hidden" name="sort" value="popular">
               <span class="sort__label">Сначала популярные</span>
             </label>
-            <label class="sort__item">
+            <label class="sort__item" data-close-target="js-sort-modal">
               <input type="radio" class="visually-hidden" name="sort" value="new">
               <span class="sort__label">Сначала новые</span>
             </label>
@@ -140,41 +140,47 @@
 
       <form class="catalog__filter filter">
 
-        <button class="filter__btn" type="button">Фильтры</button>
+        <button class="filter__btn" type="button" data-open-target="js-filter-modal">Фильтры</button>
 
-        <fieldset class="filter__list">
-          <label class="thumb">
-            <input type="checkbox" name="filter" value="new" checked class="visually-hidden">
-            <span class="thumb__box"></span>
-            <span class="thumb__label">Новинки</span>
-          </label>
-          <label class="thumb">
-            <input type="checkbox" name="filter" value="available" class="visually-hidden">
-            <span class="thumb__box"></span>
-            <span class="thumb__label">Есть в наличии</span>
-          </label>
-          <label class="thumb">
-            <input type="checkbox" name="filter" value="contract" class="visually-hidden">
-            <span class="thumb__box"></span>
-            <span class="thumb__label">Контрактные</span>
-          </label>
-          <label class="thumb">
-            <input type="checkbox" name="filter" value="exclusive" class="visually-hidden">
-            <span class="thumb__box"></span>
-            <span class="thumb__label">Эксклюзивные</span>
-          </label>
-          <label class="thumb">
-            <input type="checkbox" name="filter" value="sale" class="visually-hidden">
-            <span class="thumb__box"></span>
-            <span class="thumb__label">Распродажа</span>
-          </label>
+        <fieldset class="filter__list js-filter-modal">
+
+          <div class="filter__list-wrap">
+            <button class="filter__close" type="button" data-close-target="js-filter-modal"
+                    aria-label="Закрыть окно"></button>
+
+            <label class="thumb">
+              <input type="checkbox" name="filter" value="new" checked class="visually-hidden">
+              <span class="thumb__box"></span>
+              <span class="thumb__label">Новинки</span>
+            </label>
+            <label class="thumb">
+              <input type="checkbox" name="filter" value="available" class="visually-hidden">
+              <span class="thumb__box"></span>
+              <span class="thumb__label">Есть в наличии</span>
+            </label>
+            <label class="thumb">
+              <input type="checkbox" name="filter" value="contract" class="visually-hidden">
+              <span class="thumb__box"></span>
+              <span class="thumb__label">Контрактные</span>
+            </label>
+            <label class="thumb">
+              <input type="checkbox" name="filter" value="exclusive" class="visually-hidden">
+              <span class="thumb__box"></span>
+              <span class="thumb__label">Эксклюзивные</span>
+            </label>
+            <label class="thumb">
+              <input type="checkbox" name="filter" value="sale" class="visually-hidden">
+              <span class="thumb__box"></span>
+              <span class="thumb__label">Распродажа</span>
+            </label>
+          </div>
         </fieldset>
       </form>
 
       <div class="catalog__products">
-        <article class="product">
+        <article tabindex="0" class="product">
           <picture class="product__picture">
-            <img src="" width="279" height="279" alt="" class="product__img">
+            <img src="https://placehold.co/279" width="279" height="279" alt="" class="product__img">
           </picture>
 
           <div class="product__content">

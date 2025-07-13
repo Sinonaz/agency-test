@@ -19,12 +19,6 @@
       & .thumb__box {
         box-shadow: inset 0 0 0 1px var.$c-primary;
       }
-
-      &:has(input:checked) {
-        & .thumb__box {
-          box-shadow: inset 0 0 0 1px var.$c-black;
-        }
-      }
     }
   }
 }

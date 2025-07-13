@@ -1,5 +1,6 @@
 @use "../core/var";
 @use "../core/media";
+@use "../core/mixins";
 
 .header {
   min-height: 104px;
@@ -54,6 +55,14 @@
       height: 21px;
     }
   }
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition;
+
+    @include mixins.hf() {
+      color: var.$c-primary;
+    }
+  }
 }
 
 .header__contacts {
@@ -70,6 +79,14 @@
   font-family: inherit;
   font-weight: 500;
   font-size: 1.6rem;
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition;
+
+    @include mixins.hf() {
+      color: var.$c-primary;
+    }
+  }
 }
 
 .header__label {

@@ -1,0 +1,78 @@
+@use "../core/media";
+@use "../core/mixins";
+@use "../core/var";
+@use "../core/extends";
+
+.sort {
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.sort__btn {
+  @extend %btn-reset;
+
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+  font-family: var.$main-font;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+
+  &::after {
+    content: "";
+    flex-shrink: 0;
+    width: 10px;
+    height: 10px;
+    background: url("/img/svg/triangle.svg") no-repeat center / contain;
+  }
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition;
+
+    @include mixins.hf() {
+      color: var.$c-primary;
+    }
+  }
+}
+
+.sort__list {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 5;
+  display: none;
+  flex-direction: column;
+  width: fit-content;
+  min-width: 280px;
+  background: var.$c-white;
+
+  @include media.device(tablet) {
+    min-width: 200px;
+  }
+}
+
+.sort__item {
+  padding: 17px 24px;
+  cursor: pointer;
+
+  &:has(input:checked) {
+    background: var.$c-primary;
+  }
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition, background var.$transition;
+
+    &:not(:has(input:checked)) {
+      @include mixins.hf() {
+        color: var.$c-primary;
+      }
+    }
+  }
+
+  @include media.device(tablet) {
+    padding: 10px 15px;
+  }
+}
