@@ -1,0 +1,79 @@
+@use "../core/media";
+@use "../core/mixins";
+@use "../core/var";
+@use "../core/extends";
+
+.slider {
+  min-height: 560px;
+
+  @include media.device(tablet) {
+    display: none;
+  }
+}
+
+.slider__list {
+  @extend %list-reset;
+}
+
+.slider__item {
+  display: grid;
+  place-items: center;
+}
+
+.slider__picture {
+  grid-area: 1/1/-1/-1;
+  width: 100%;
+  height: 100%;
+}
+
+.slider__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slider__content {
+  grid-area: 1/1/-1/-1;
+  z-index: 1;
+  max-width: 500px;
+  text-align: center;
+  color: var.$c-white;
+  font-weight: 500;
+  font-size: 1.6rem;
+  opacity: 1;
+  transition: opacity 1000ms 300ms, transform 1000ms 300ms;
+
+  &:not(.slider__item--active &) {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+}
+
+.slider__title {
+  margin: 0 0 24px;
+  font-weight: 400;
+  font-size: 7.2rem;
+}
+
+.slide__pagination {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  z-index: 1;
+  transform: translateX(-50%);
+}
+
+.slider__slide-btn {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  transform: translateY(-50%);
+
+  &--prev {
+    left: var.$container-desktop-padding;
+  }
+
+  &--next {
+    right: var.$container-desktop-padding;
+  }
+}

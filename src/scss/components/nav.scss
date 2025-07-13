@@ -14,7 +14,7 @@
   text-transform: uppercase;
 
   @include media.before-device(tablet) {
-    transition: var.$transition;
+    transition: color var.$transition;
 
     @include mixins.hf() {
       color: var.$c-primary;

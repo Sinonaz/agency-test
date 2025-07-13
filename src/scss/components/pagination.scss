@@ -1,0 +1,26 @@
+@use "../core/media";
+@use "../core/var";
+@use "../core/mixins";
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 13px 24px;
+  background: rgba(var.$c-black, .4);
+  border-radius: 16px;
+}
+
+.pagination__item {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(var.$c-white, .2);
+  transition: background var.$transition;
+
+  &--active {
+    background: var.$c-white;
+  }
+}

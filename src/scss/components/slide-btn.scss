@@ -1,0 +1,36 @@
+@use "../core/media";
+@use "../core/var";
+@use "../core/extends";
+@use "../core/mixins";
+
+.slide-btn {
+  @extend %btn-reset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  color: var.$c-white;
+
+  &--prev {
+    & svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  &:disabled {
+    opacity: .3;
+    cursor: default;
+  }
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition;
+
+    &:not(:disabled) {
+      @include mixins.hf() {
+        color: var.$c-primary;
+      }
+    }
+  }
+}

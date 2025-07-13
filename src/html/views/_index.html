@@ -1,3 +1,109 @@
 <main class="content__main main">
-  <h1>Hello world!</h1>
+  <h1 class="visually-hidden">Каталог товаров</h1>
+
+  <ul class="main__breadcrumbs breadcrumbs">
+    <li class="breadcrumbs__item">
+      <a href="#" class="breadcrumbs__link">Главная</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="#" class="breadcrumbs__link">Продукты</a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="#" class="breadcrumbs__link">Краски</a>
+    </li>
+  </ul>
+
+  <section class="main__promo-slider slider">
+    <h2 class="visually-hidden">Наши предложения</h2>
+
+    <div class="slider__wrapper swiper js-promo-swiper">
+      <ul class="slider__list swiper-wrapper">
+        <li class="slider__item swiper-slide">
+          <div class="slider__content">
+            <h2 class="slider__title">Краски</h2>
+            <p class="slider__text">
+              Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!
+            </p>
+          </div>
+
+          <picture class="slider__picture">
+            <source srcset="/img/components/slider/slide-1.webp">
+            <img class="slider__img" src="/img/components/slider/slide-1.jpg" width="1920" height="560"
+                 alt="Коричневая ваза с цветами на тёмно-зелёном фоне">
+          </picture>
+        </li>
+        <li class="slider__item swiper-slide">
+          <div class="slider__content">
+            <h2 class="slider__title">Краски</h2>
+            <p class="slider__text">
+              Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!
+            </p>
+          </div>
+
+          <picture class="slider__picture">
+            <source srcset="/img/components/slider/slide-1.webp">
+            <img class="slider__img" src="/img/components/slider/slide-1.jpg" width="1920" height="560"
+                 alt="Коричневая ваза с цветами на тёмно-зелёном фоне">
+          </picture>
+        </li>
+        <li class="slider__item swiper-slide">
+          <div class="slider__content">
+            <h2 class="slider__title">Краски</h2>
+            <p class="slider__text">
+              Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!
+            </p>
+          </div>
+
+          <picture class="slider__picture">
+            <source srcset="/img/components/slider/slide-1.webp">
+            <img class="slider__img" src="/img/components/slider/slide-1.jpg" width="1920" height="560"
+                 alt="Коричневая ваза с цветами на тёмно-зелёном фоне">
+          </picture>
+        </li>
+        <li class="slider__item swiper-slide">
+          <div class="slider__content">
+            <h2 class="slider__title">Краски</h2>
+            <p class="slider__text">
+              Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!
+            </p>
+          </div>
+
+          <picture class="slider__picture">
+            <source srcset="/img/components/slider/slide-1.webp">
+            <img class="slider__img" src="/img/components/slider/slide-1.jpg" width="1920" height="560"
+                 alt="Коричневая ваза с цветами на тёмно-зелёном фоне">
+          </picture>
+        </li>
+        <li class="slider__item swiper-slide">
+          <div class="slider__content">
+            <h2 class="slider__title">Краски</h2>
+            <p class="slider__text">
+              Идеально подходят для стен и других поверхностей. Найди свой идеальный цвет!
+            </p>
+          </div>
+
+          <picture class="slider__picture">
+            <source srcset="/img/components/slider/slide-1.webp">
+            <img class="slider__img" src="/img/components/slider/slide-1.jpg" width="1920" height="560"
+                 alt="Коричневая ваза с цветами на тёмно-зелёном фоне">
+          </picture>
+        </li>
+      </ul>
+
+      <button class="slider__slide-btn slider__slide-btn--prev slide-btn slide-btn--prev"
+              aria-label="Предыдущий слайд">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <use xlink:href="/img/sprite.svg#slide-arrow"></use>
+        </svg>
+      </button>
+      <button class="slider__slide-btn slider__slide-btn--next slide-btn slide-btn--next"
+              aria-label="Следующий слайд">
+        <svg width="80" height="80" viewBox="0 0 80 80">
+          <use xlink:href="/img/sprite.svg#slide-arrow"></use>
+        </svg>
+      </button>
+
+      <div class="slide__pagination pagination"></div>
+    </div>
+  </section>
 </main>
