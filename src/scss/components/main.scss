@@ -1,0 +1,17 @@
+@use "../core/media";
+
+.main {
+  position: relative;
+}
+
+.main__breadcrumbs {
+  margin-top: 16px;
+
+  @include media.before-device(tablet) {
+    position: absolute;
+    top: 35px;
+    left: 0;
+    z-index: 2;
+    margin-top: 0;
+  }
+}

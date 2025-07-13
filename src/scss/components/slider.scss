@@ -70,10 +70,10 @@
   transform: translateY(-50%);
 
   &--prev {
-    left: var.$container-desktop-padding;
+    left: var.$container-desktop-padding - 20px;
   }
 
   &--next {
-    right: var.$container-desktop-padding;
+    right: var.$container-desktop-padding - 20px;
   }
 }

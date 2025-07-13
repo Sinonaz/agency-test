@@ -1,0 +1,46 @@
+@use "../core/extends";
+@use "../core/mixins";
+@use "../core/media";
+@use "../core/var";
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 1rem;
+  color: var.$c-white;
+  list-style: none;
+  margin: 0;
+}
+
+.breadcrumbs__link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: inherit;
+  text-transform: uppercase;
+  color: #C4C4C4;
+
+  &:not(.breadcrumbs__item:first-child &) {
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      color: inherit;
+      background: currentColor;
+    }
+  }
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition;
+
+    &[href] {
+      @include mixins.hf() {
+        color: var.$c-white;
+      }
+    }
+  }
+}
