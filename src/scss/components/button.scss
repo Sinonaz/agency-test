@@ -14,4 +14,9 @@
   color: var.$c-black;
   background: var.$c-primary;
   border-radius: 4px;
+
+  @include media.device(mobile) {
+    min-width: 150px;
+    padding: 10px;
+  }
 }

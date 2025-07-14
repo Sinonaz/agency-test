@@ -59,6 +59,12 @@
     font-weight: 500;
     font-size: 3rem;
   }
+
+  @include media.device(mobile) {
+    & span {
+      font-size: 2rem;
+    }
+  }
 }
 
 .cart__list {

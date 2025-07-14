@@ -7,6 +7,11 @@
   display: grid;
   grid-template-columns: 40px 50px 40px;
   align-items: center;
+
+  @include media.device(tablet) {
+    grid-template-columns: repeat(3, 30px);
+
+  }
 }
 
 .counter__btn {
@@ -35,6 +40,10 @@
       background: var.$c-primary;
     }
   }
+
+  @include media.device(tablet) {
+    height: 20px;
+  }
 }
 
 .counter__input {
@@ -53,5 +62,9 @@
   &::-webkit-inner-spin-button {
     margin: 0;
     appearance: none;
+  }
+
+  @include media.device(tablet) {
+    font-size: 1.4rem;
   }
 }
