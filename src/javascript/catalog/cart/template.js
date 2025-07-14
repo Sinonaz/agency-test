@@ -10,7 +10,7 @@ export const getCartItemTemplate = (cartId, { name, id, price, image }, count) =
           <div class="cart-item__counter counter js-counter" data-id="${id}">
             <button type="button" class="counter__btn" data-decrement aria-label="Увеличить счётчик на единицу">
               <svg width="16" height="16" viewBox="0 0 20 20">
-                <use xlink:href="/img/sprite.svg#minus"></use>
+                <use xlink:href="./img/sprite.svg#minus"></use>
               </svg>
             </button>
             <label class="counter__label">
@@ -19,7 +19,7 @@ export const getCartItemTemplate = (cartId, { name, id, price, image }, count) =
             </label>
             <button type="button" class="counter__btn" data-increment aria-label="Уменьшить счётчик на единицу">
               <svg width="16" height="16" viewBox="0 0 20 20">
-                <use xlink:href="/img/sprite.svg#plus"></use>
+                <use xlink:href="./img/sprite.svg#plus"></use>
               </svg>
             </button>
           </div>
@@ -28,12 +28,12 @@ export const getCartItemTemplate = (cartId, { name, id, price, image }, count) =
             <button class="cart-item__action cart-item__action--remove js-remove" data-cart-id="${cartId}" data-id="${id}" type="button"
                     aria-label="Удалить товар из корзины">
               <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="/img/sprite.svg#cross"></use>
+                <use xlink:href="./img/sprite.svg#cross"></use>
               </svg>
             </button>
             <button class="cart-item__action cart-item__action--restore js-restore" data-cart-id="${cartId}" data-id="${id}" type="button" aria-label="Восстановить товар">
               <svg width="24" height="24" viewBox="0 0 24 24">
-                <use xlink:href="/img/sprite.svg#repeat"></use>
+                <use xlink:href="./img/sprite.svg#repeat"></use>
               </svg>
             </button>
           </div>

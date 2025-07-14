@@ -13,7 +13,7 @@ export const getProductTemplate = ({ name, price, id, isAvailable, isSale, image
                 ? 'Недоступно'
                 : '<svg width="20" height="20" viewBox="0 0 20 20">\n' +
                   '                <use' +
-                  ' xlink:href="/img/sprite.svg#plus"></use>\n              </svg>'
+                  ' xlink:href="./img/sprite.svg#plus"></use>\n              </svg>'
             }
 
             </button>
