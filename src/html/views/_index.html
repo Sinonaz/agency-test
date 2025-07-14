@@ -107,38 +107,38 @@
     </div>
   </section>
 
-  <section class="main__catalog catalog">
+  <section class="main__catalog catalog js-catalog">
 
     <div class="catalog__wrapper container">
       <h2 class="catalog__title">Краски</h2>
       <div class="catalog__head">
-        <p class="catalog__total js-total">412 товаров</p>
+        <p class="catalog__total js-total"></p>
 
-        <form class="catalog__sort sort">
-          <button class="sort__btn" type="button" data-open-target="js-sort-modal">Сначала новые</button>
+        <form class="catalog__sort sort js-sort-form">
+          <button class="sort__btn js-sort-btn" type="button" data-open-target="js-sort-modal">Сначала недорогие</button>
 
           <fieldset class="sort__list js-sort-modal" data-overlay>
             <label class="sort__item" data-close-target="js-sort-modal">
-              <input type="radio" class="visually-hidden" name="sort" value="expensive">
+              <input type="radio" class="visually-hidden" data-value="Сначала дорогие" name="sort" value="expensive">
               <span class="sort__label">Сначала дорогие</span>
             </label>
             <label class="sort__item" data-close-target="js-sort-modal">
-              <input type="radio" class="visually-hidden" name="sort" value="cheap">
+              <input type="radio" class="visually-hidden" data-value="Сначала недорогие" name="sort" value="cheap" checked>
               <span class="sort__label">Сначала недорогие</span>
             </label>
             <label class="sort__item" data-close-target="js-sort-modal">
-              <input type="radio" class="visually-hidden" name="sort" value="popular">
-              <span class="sort__label">Сначала популярные</span>
+              <input type="radio" class="visually-hidden" data-value="Сначала скидки" name="sort" value="sale">
+              <span class="sort__label">Сначала скидки</span>
             </label>
             <label class="sort__item" data-close-target="js-sort-modal">
-              <input type="radio" class="visually-hidden" name="sort" value="new">
+              <input type="radio" class="visually-hidden" data-value="Сначала новые" name="sort" value="new">
               <span class="sort__label">Сначала новые</span>
             </label>
           </fieldset>
         </form>
       </div>
 
-      <form class="catalog__filter filter">
+      <form class="catalog__filter filter js-filter-form">
 
         <button class="filter__btn" type="button" data-open-target="js-filter-modal">Фильтры</button>
 
@@ -149,27 +149,27 @@
                     aria-label="Закрыть окно"></button>
 
             <label class="thumb">
-              <input type="checkbox" name="filter" value="new" checked class="visually-hidden">
+              <input type="checkbox" name="filter" value="isNew" class="visually-hidden">
               <span class="thumb__box"></span>
               <span class="thumb__label">Новинки</span>
             </label>
             <label class="thumb">
-              <input type="checkbox" name="filter" value="available" class="visually-hidden">
+              <input type="checkbox" name="filter" value="isAvailable" class="visually-hidden">
               <span class="thumb__box"></span>
               <span class="thumb__label">Есть в наличии</span>
             </label>
             <label class="thumb">
-              <input type="checkbox" name="filter" value="contract" class="visually-hidden">
+              <input type="checkbox" name="filter" value="isContract" class="visually-hidden">
               <span class="thumb__box"></span>
               <span class="thumb__label">Контрактные</span>
             </label>
             <label class="thumb">
-              <input type="checkbox" name="filter" value="exclusive" class="visually-hidden">
+              <input type="checkbox" name="filter" value="isExclusive" class="visually-hidden">
               <span class="thumb__box"></span>
               <span class="thumb__label">Эксклюзивные</span>
             </label>
             <label class="thumb">
-              <input type="checkbox" name="filter" value="sale" class="visually-hidden">
+              <input type="checkbox" name="filter" value="isSale" class="visually-hidden">
               <span class="thumb__box"></span>
               <span class="thumb__label">Распродажа</span>
             </label>
@@ -177,23 +177,7 @@
         </fieldset>
       </form>
 
-      <div class="catalog__products">
-        <article tabindex="0" class="product">
-          <picture class="product__picture">
-            <img src="https://placehold.co/279" width="279" height="279" alt="" class="product__img">
-          </picture>
-
-          <div class="product__content">
-            <a href="#" class="product__name">Краска Wallquest, Brownsone MS90102</a>
-            <p class="product__price">6000 ₽</p>
-            <button class="product__btn" type="button" aria-label="Добавить в корзину">
-              <svg width="20" height="20" viewBox="0 0 20 20">
-                <use xlink:href="/img/sprite.svg#plus"></use>
-              </svg>
-            </button>
-          </div>
-        </article>
-      </div>
+      <div class="catalog__products js-products"></div>
     </div>
   </section>
 </main>

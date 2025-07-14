@@ -4,11 +4,27 @@
 @use "../core/extends";
 
 .product {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(black, .1);
+
+  &[data-is-sale="true"] {
+    &::before {
+      @include mixins.pseudo('sale');
+
+      top: 10px;
+      left: 10px;
+      z-index: 1;
+      padding: 2px 5px;
+      border-radius: 4px;
+      color: var.$c-white;
+      font-size: 1.2rem;
+      background: red;
+    }
+  }
 
   @include media.before-device(tablet) {
     transition: border-bottom var.$transition;
@@ -81,12 +97,17 @@
 }
 
 .product__picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
   overflow: hidden;
 }
 
 .product__img {
   width: 100%;
   max-height: 278px;
+  object-fit: contain;
 
   @include media.before-device(tablet) {
     transition: transform var.$transition;
