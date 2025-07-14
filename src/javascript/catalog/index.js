@@ -6,6 +6,5 @@ export function initCatalog() {
   if (!rootElement) return
 
   const products = new Products(rootElement)
-
   products.init()
 }

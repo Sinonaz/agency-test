@@ -1,4 +1,5 @@
-import {KeyboardKeys} from "../utils/constants.js";
+import { KeyboardKeys } from '../utils/constants.js'
+import { eventEmitter } from '../event-emitter/index.js'
 
 class Modals {
   #modalElement
@@ -6,13 +7,16 @@ class Modals {
   #body = document.body
   #focusedElement = null
   #lastElement = null
+  #eventEmitter = eventEmitter
 
   constructor() {
     document.addEventListener('click', this.onDocumentClick)
   }
 
   #setLastElement() {
-    const elements = this.#modalElement.querySelectorAll(`a, button, [tabindex]:not([tabindex='-1'])`)
+    const elements = this.#modalElement.querySelectorAll(
+      `a, button, [tabindex]:not([tabindex='-1'])`,
+    )
     this.#lastElement = elements[elements.length - 1]
   }
 
@@ -54,6 +58,11 @@ class Modals {
     this.#body.style.overflow = ''
     this.#body.removeAttribute('data-overlay')
 
+    if (this.#modalElement.hasAttribute('data-modal-name')) {
+      const modalName = this.#modalElement.dataset.modalName
+      this.#eventEmitter.emit(`${modalName}-modal:close`)
+    }
+
     this.#returnFocusOnButtonElement()
     this.#focusedElement = null
 
@@ -71,6 +80,11 @@ class Modals {
 
     if (this.#modalElement.hasAttribute('data-overlay')) {
       this.#body.setAttribute('data-overlay', '')
+    }
+
+    if (this.#modalElement.hasAttribute('data-modal-name')) {
+      const modalName = this.#modalElement.dataset.modalName
+      this.#eventEmitter.emit(`${modalName}-modal:open`, modalName)
     }
 
     this.#setModalTabIndex()

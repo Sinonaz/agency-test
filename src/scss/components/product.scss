@@ -79,11 +79,28 @@
     transform: scale(0.8);
   }
 
+  &:disabled {
+    pointer-events: none;
+    touch-action: none;
+    background: var.$c-gray;
+  }
+
+  & svg {
+    pointer-events: none;
+    touch-action: none;
+  }
+
   @include media.before-device(tablet) {
     opacity: 0;
 
     .product:is(:hover, :focus-within, :focus-visible) & {
       opacity: 1;
+    }
+
+    &:disabled {
+      .product:is(:hover, :focus-within, :focus-visible) & {
+        opacity: .4;
+      }
     }
   }
 

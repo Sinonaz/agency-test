@@ -38,6 +38,11 @@
   grid-row: 1/-1;
   justify-content: center;
   align-items: center;
+
+  & img {
+    width: 96px;
+    height: 96px;
+  }
 }
 
 .cart-item__action {
@@ -47,6 +52,20 @@
 
   &--remove {
     color: rgba(black, .3);
+  }
+
+  &--restore {
+    display: none;
+  }
+
+  .cart-item--removed & {
+    &--remove {
+      display: none;
+    }
+
+    &--restore {
+      display: block;
+    }
   }
 
   @include media.before-device(tablet) {

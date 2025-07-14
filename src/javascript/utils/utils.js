@@ -18,3 +18,5 @@ export const getDeclension = (number, titles) => {
     number % 100 > 4 && number % 100 < 20 ? 2 : cases[number % 10 < 5 ? number % 10 : 5]
   ]
 }
+
+export const formattedPrice = (price) => new Intl.NumberFormat(`ru-RU`).format(price)

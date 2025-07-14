@@ -1,6 +1,6 @@
-<section class="side-modal">
-  <div class="side-modal__wrapper">
-    <button class="side-modal__close" type="button" aria-label="Закрыть окно">
+<section class="side-modal js-cart-modal" data-modal-name="cart">
+  <div class="side-modal__wrapper js-cart">
+    <button class="side-modal__close" data-close-target="js-cart-modal" type="button" aria-label="Закрыть окно">
       <svg width="24" height="24" viewBox="0 0 24 24">
         <use xlink:href="/img/sprite.svg#cross"></use>
       </svg>
@@ -9,11 +9,11 @@
 
     <div class="side-modal__cart cart">
       <div class="cart__head">
-        <p class="cart__count">4 товара</p>
-        <button class="cart__clear" type="button">очистить список</button>
+        <p class="cart__count js-amount">4 товара</p>
+        <button class="cart__clear js-clear" type="button">очистить список</button>
       </div>
 
-      <div class="cart__list">
+      <div class="cart__list js-cart-list">
         <article class="cart-item">
           <picture class="cart-item__picture">
             <img src="https://placehold.co/96" width="96" height="96" alt="">
@@ -58,7 +58,7 @@
       <div class="cart__footer">
         <p class="cart__price">
           Итого
-          <span>14 400₽</span>
+          <span class="js-total-price" ></span>
         </p>
 
         <button type="button" class="cart__btn button">Оформить заказ</button>

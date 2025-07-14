@@ -3,6 +3,7 @@ import { getDeclension, renderElement } from '../../utils/utils.js'
 import { getProductTemplate } from './template.js'
 import { Filter } from '../filter/index.js'
 import { eventEmitter } from '../../event-emitter/index.js'
+import { Cart } from '../cart/index.js'
 
 class Products {
   #productListElement
@@ -22,11 +23,11 @@ class Products {
     this.#countElement = this.rootElement.querySelector('.js-total')
     this.filter = new Filter(this.rootElement)
 
-    void this.fetchProducts()
+    void this.#fetchProducts()
     this.#addListeners()
   }
 
-  async fetchProducts() {
+  async #fetchProducts() {
     try {
       const { data } = await axios.get(this.#url)
 
@@ -34,6 +35,7 @@ class Products {
         this.#products = data
 
         this.#renderProducts(this.#products)
+        new Cart(this.#products).init()
       }
     } catch (error) {
       console.log(error)
