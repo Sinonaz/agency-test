@@ -7,9 +7,11 @@
     "dev": "vite --open",
     "host": "vite --open --host",
     "build": "vite build",
-    "preview": "vite preview --open"
+    "preview": "vite preview --open",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
+    "gh-pages": "^6.3.0",
     "gulp": "^5.0.0",
     "gulp-cheerio": "^1.0.0",
     "gulp-rename": "^2.0.0",
