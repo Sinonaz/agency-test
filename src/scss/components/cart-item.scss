@@ -50,6 +50,11 @@
 
   grid-area: 1/1/-1/-1;
 
+  & svg {
+    pointer-events: none;
+    touch-action: none;
+  }
+
   &--remove {
     color: rgba(black, .3);
   }

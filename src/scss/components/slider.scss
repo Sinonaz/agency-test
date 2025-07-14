@@ -4,8 +4,6 @@
 @use "../core/extends";
 
 .slider {
-  min-height: 560px;
-
   @include media.device(tablet) {
     display: none;
   }

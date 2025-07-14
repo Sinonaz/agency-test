@@ -1,4 +1,5 @@
 import { Products } from './products/index.js'
+import { Counter } from './counter/index.js'
 
 export function initCatalog() {
   const rootElement = document.querySelector('.js-catalog')
@@ -7,4 +8,5 @@ export function initCatalog() {
 
   const products = new Products(rootElement)
   products.init()
+  new Counter().init()
 }

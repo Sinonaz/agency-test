@@ -35,7 +35,7 @@ class Products {
         this.#products = data
 
         this.#renderProducts(this.#products)
-        new Cart(this.#products).init()
+        await new Cart(this.#products).init()
       }
     } catch (error) {
       console.log(error)

@@ -25,6 +25,11 @@
     transform: scale(0.8);
   }
 
+  & svg {
+    pointer-events: none;
+    touch-action: none;
+  }
+
   @include media.before-device(tablet) {
     @include mixins.hf() {
       background: var.$c-primary;

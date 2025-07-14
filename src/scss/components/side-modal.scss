@@ -30,6 +30,18 @@
   &--open {
     transform: translateX(0);
   }
+
+  &[data-loading="true"] {
+    &::before {
+      @include mixins.pseudo();
+
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      background: rgba(var.$c-white, .6);
+    }
+  }
 }
 
 .side-modal__close {

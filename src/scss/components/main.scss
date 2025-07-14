@@ -16,3 +16,11 @@
     margin-top: 0;
   }
 }
+
+.main__catalog {
+  margin-top: 70px;
+
+  @include media.device(tablet) {
+    margin-top: 50px;
+  }
+}
