@@ -10,7 +10,7 @@ const BLD_PATH = './build'
 
 export default defineConfig({
   root: resolve(__dirname, SRC_PATH),
-  base: '/',
+  base: './',
   build: {
     emptyOutDir: true,
     outDir: resolve(__dirname, BLD_PATH),
