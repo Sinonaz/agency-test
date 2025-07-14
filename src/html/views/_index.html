@@ -117,7 +117,7 @@
         <form class="catalog__sort sort">
           <button class="sort__btn" type="button" data-open-target="js-sort-modal">Сначала новые</button>
 
-          <fieldset class="sort__list js-sort-modal">
+          <fieldset class="sort__list js-sort-modal" data-overlay>
             <label class="sort__item" data-close-target="js-sort-modal">
               <input type="radio" class="visually-hidden" name="sort" value="expensive">
               <span class="sort__label">Сначала дорогие</span>
@@ -142,7 +142,7 @@
 
         <button class="filter__btn" type="button" data-open-target="js-filter-modal">Фильтры</button>
 
-        <fieldset class="filter__list js-filter-modal">
+        <fieldset class="filter__list js-filter-modal" data-overlay>
 
           <div class="filter__list-wrap">
             <button class="filter__close" type="button" data-close-target="js-filter-modal"

@@ -1,0 +1,17 @@
+@use "../core/media";
+@use "../core/mixins";
+@use "../core/extends";
+@use "../core/var";
+
+.button {
+  @extend %btn-reset;
+
+  min-width: 240px;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var.$c-black;
+  background: var.$c-primary;
+  border-radius: 4px;
+}

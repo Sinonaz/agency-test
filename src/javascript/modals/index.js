@@ -68,7 +68,10 @@ class Modals {
     this.#modalElement.dataset.isModalOpen = 'true'
 
     this.#body.style.overflow = 'hidden'
-    this.#body.setAttribute('data-overlay', '')
+
+    if (this.#modalElement.hasAttribute('data-overlay')) {
+      this.#body.setAttribute('data-overlay', '')
+    }
 
     this.#setModalTabIndex()
     this.#focusMenuElement()

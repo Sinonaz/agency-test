@@ -1,0 +1,52 @@
+@use "../core/media";
+@use "../core/mixins";
+@use "../core/var";
+@use "../core/extends";
+
+.counter {
+  display: grid;
+  grid-template-columns: 40px 50px 40px;
+  align-items: center;
+}
+
+.counter__btn {
+  @extend %btn-reset;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 24px;
+  background: var.$c-gray;
+  border-radius: 4px;
+  transition: background var.$transition, transform var.$transition;
+
+  &:active {
+    transform: scale(0.8);
+  }
+
+  @include media.before-device(tablet) {
+    @include mixins.hf() {
+      background: var.$c-primary;
+    }
+  }
+}
+
+.counter__input {
+  width: 100%;
+  background: none;
+  text-align: center;
+  border: none;
+  border-radius: 0;
+  outline: none;
+  appearance: none;
+  -moz-appearance: textfield;
+  font-family: var.$main-font;
+  font-size: 1.6rem;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    margin: 0;
+    appearance: none;
+  }
+}

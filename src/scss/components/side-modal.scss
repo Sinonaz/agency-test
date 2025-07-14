@@ -1,0 +1,64 @@
+@use "../core/media";
+@use "../core/mixins";
+@use "../core/var";
+@use "../core/extends";
+
+.side-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  display: none;
+  justify-content: end;
+  width: 100%;
+  height: 100%;
+  background: rgba(black, .7);
+  overflow: hidden;
+}
+
+.side-modal__wrapper {
+  position: relative;
+  display: grid;
+  grid-template-rows: min-content calc(100% - 130px);
+  gap: 90px;
+  width: 100%;
+  max-width: 600px;
+  padding: 40px;
+  background: var.$c-white;
+  transform: translateX(100%);
+  transition: transform var.$transition;
+
+  &--open {
+    transform: translateX(0);
+  }
+}
+
+.side-modal__close {
+  @extend %btn-reset;
+
+  position: absolute;
+  top: 32px;
+  right: 40px;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1px black;
+
+  @include media.before-device(tablet) {
+    transition: color var.$transition, box-shadow var.$transition;
+
+    @include mixins.hf() {
+      color: var.$c-primary;
+      box-shadow: inset 0 0 0 1px var.$c-primary;
+    }
+  }
+}
+
+.side-modal__title {
+  margin: 0;
+  font-weight: 500;
+  font-size: 3rem;
+}
