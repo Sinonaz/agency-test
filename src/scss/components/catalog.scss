@@ -5,6 +5,7 @@
   grid-template-columns: 170px 1fr;
   grid-template-rows: min-content 1fr;
   gap: 40px;
+  min-height: 1000px;
 
 
   @include media.device(tablet) {

@@ -1,7 +1,8 @@
 export const getProductTemplate = ({ name, price, id, isAvailable, isSale, image }) => {
   return `<article tabindex="0" class="product" data-is-sale="${isSale}">
           <picture class="product__picture">
-            <img src="${image}" width="279" height="279" alt="" class="product__img">
+            <source srcset="./img/components/product/img-${id}.webp" type="image/webp">
+            <img src="./img/components/product/img-${id}.png" width="279" height="279" alt="" class="product__img">
           </picture>
 
           <div class="product__content">

@@ -60,6 +60,10 @@
   margin: 0;
   font-weight: 600;
   font-size: 1.6rem;
+
+  @include media.device(mobile) {
+    align-self: end;
+  }
 }
 
 .product__btn {
@@ -72,8 +76,8 @@
   min-height: 32px;
   min-width: 80px;
   border-radius: 8px;
-  background: var.$c-primary;
-  transition: opacity var.$transition, transform var.$transition;
+  background: var.$c-gray;
+  transition: opacity var.$transition, transform var.$transition, background var.$transition;
 
   &:active {
     transform: scale(0.8);
@@ -82,7 +86,6 @@
   &:disabled {
     pointer-events: none;
     touch-action: none;
-    background: var.$c-gray;
   }
 
   & svg {
@@ -102,6 +105,10 @@
         opacity: .4;
       }
     }
+
+    @include mixins.hf() {
+      background: var.$c-primary;
+    }
   }
 
   @include media.device(tablet-mid) {
@@ -109,6 +116,11 @@
     min-width: 40px;
     padding: 4px;
     border-radius: 6px;
+
+    & svg {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
 

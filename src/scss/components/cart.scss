@@ -74,4 +74,18 @@
   flex-direction: column;
   gap: 12px;
   overflow-y: auto;
+
+  &:has(.cart__empty) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.cart__empty {
+  display: grid;
+  grid-auto-rows: min-content;
+  place-items: center;
+  font-size: 2rem;
 }

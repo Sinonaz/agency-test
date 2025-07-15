@@ -1,7 +1,8 @@
 export const getCartItemTemplate = (cartId, { name, id, price, image }, count) => {
   return `<article class="cart-item" data-id="${cartId}">
           <picture class="cart-item__picture">
-            <img src="${image}" width="96" height="96" alt="">
+            <source srcset="./img/components/product/img-${id}.webp" type="image/webp">
+            <img src="./img/components/product/img-${id}.png" width="96" height="96" alt="">
           </picture>
 
           <a href="#" class="cart-item__name">${name}</a>
@@ -42,6 +43,7 @@ export const getCartItemTemplate = (cartId, { name, id, price, image }, count) =
 
 export const getEmptyStateTemplate = () => {
   return `<div class="cart__empty">
+      <img src="./img/icons/empty-box.svg" width="100" height="100" alt="">
   <p>Корзина пуста</p>
 </div>`
 }
